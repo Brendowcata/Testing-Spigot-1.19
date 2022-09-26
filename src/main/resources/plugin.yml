@@ -1,0 +1,11 @@
+name: TestePlugin
+version: '${project.version}'
+main: com.w0dn3r.test.Main
+api-version: 1.19
+authors: [ w0dn3r ]
+description: Test Plugin
+commands:
+  heal:
+  test:
+  config:
+  vanish:

@@ -1,0 +1,13 @@
+Word: 'Banana'
+Number: 50
+Boolean: true
+String-list:
+  - 'Value1'
+  - 'Value2'
+  - 'Value3'
+
+Test:
+  Test1:
+  Test2:
+    Test2.1:
+  Test3:
