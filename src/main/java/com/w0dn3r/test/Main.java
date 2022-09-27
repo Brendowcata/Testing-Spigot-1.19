@@ -3,12 +3,17 @@ package com.w0dn3r.test;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
+import org.bukkit.Material;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
+import org.bukkit.entity.Egg;
 import org.bukkit.entity.Firework;
+import org.bukkit.entity.Player;
+import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.meta.FireworkMeta;
@@ -96,6 +101,22 @@ public final class Main extends JavaPlugin  implements Listener {
                 .withFlicker().build());
         meta.setPower(1);
         firework.setFireworkMeta(meta);
+    }
+
+    @EventHandler
+    public void onPlayerInteract(PlayerInteractEvent e) {
+
+        if (e.hasItem()) {
+            Player player = e.getPlayer();
+            if (e.getItem().getType().equals(Material.DIAMOND_HOE)) {
+                player.launchProjectile(Snowball.class);
+                player.sendMessage("§cYou have shot the snowball!");
+            } else if (e.getItem().getType().equals(Material.IRON_HOE)) {
+                player.launchProjectile(Egg.class);
+                player.sendMessage("§cYou have shot the egg!");
+            }
+        }
+
     }
 
 
