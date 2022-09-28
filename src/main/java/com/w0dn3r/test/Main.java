@@ -49,6 +49,7 @@ public final class Main extends JavaPlugin  implements Listener {
         getCommand("test").setExecutor(new TestCommand());
         getCommand("config").setExecutor(new ConfigCommand(this));
         getCommand("vanish").setExecutor(new VanishCommand());
+        getCommand("book").setExecutor(new BookCommand());
     }
 
     @Override
